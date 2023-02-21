@@ -34,7 +34,7 @@ const app = new Vue({
                     }  
                 }
             ) 
-            localStorage.setItem('user', JSON.stringify(this.users))
+            localStorage.setItem('users', JSON.stringify(this.users))
             if(this.logueo===false){
                 this.error = true
                 this.mensaje = "Username o password incorrectos"
