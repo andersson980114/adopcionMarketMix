@@ -30,7 +30,37 @@
             </div>
         </nav>
         <div class="contenedor"> 
-             
+             <div class="screen-title text-center">
+                <h3><b class="text-dark">Mascotas</b></h3>
+            </div> 
+            <br>
+            <div class="screen-table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"><b class="text-dark">Foto</b></th>
+                            <th scope="col"><b class="text-dark">Especie</b></th>
+                            <th scope="col"><b class="text-dark">Nombre</b></th>
+                            <th scope="col"><b class="text-dark">Género</b></th>
+                            <th scope="col"><b class="text-dark">Edad</b></th>
+                            <th scope="col"><b class="text-dark">Estado</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="mascota of mascotas">
+                            <td><img class="rounded" :src="mascota.foto"   height="50"/></td>
+                            <td class="text-dark">{{mascota.especie}}</td> 
+                            <td class="text-dark">{{mascota.nombre}}</td>
+                            <td class="text-dark">{{mascota.genero}}</td>
+                            <td class="text-dark">{{mascota.edad}}</td>
+                            <td class="text-dark">
+                                <a v-if="mascota.estado" class="btn btn-success text-white">Adoptado</a>
+                                <a v-else class="btn btn-danger  text-white">En Adopción</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>     
  
   

@@ -28,7 +28,36 @@
             </div>
         </nav>
         <div class="contenedor">
-             
+            <h1 class="card-title text-center" >Mascotas</h1>
+            <div class="row border p-2">
+                <div class="col-3 pt-2"  v-for="(item, index) of mascotas " :key="index" v-if="item.estado != true">
+                    <div  class="card mx-0"  >
+                        <img class="card-img-top" :src="item.foto" height="150vh">
+                        <div class="card-body">
+                            <h4 class="card-title text-center" >{{item.nombre}}</h4>
+                            <hr class="my-0"> 
+                            <div class="row"> 
+                                <p  class="col-3 font-weight-bold px-1 mx-0 text-left" >Raza:</p>
+                                <p class="col px-0 mx-0 text-left">{{item.raza}}</p>
+                            </div>
+                            <div class="row"> 
+                                <p  class="col-4 font-weight-bold px-1 mx-0 text-left" >Edad:</p>
+                                <p class="col  px-0 mx-0 text-left">{{item.edad}}</p>
+                            </div>
+                            <div class="row"> 
+                                <p  class="col-5 font-weight-bold px-0 mx-0 text-left" >Género:</p>
+                                <p class="col px-0 mx-0 text-left">{{item.genero}}</p>
+                            </div>
+                            
+                            <hr class="my-1"> 
+                            <div class="text-center">
+                                <button   class="btn btn-primary" @click="adoptar(index)">adoptar</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
               
         </div>     
  

@@ -7,7 +7,28 @@ const app = new Vue({
       error: false, 
       logueo: false
     },
-    methods:{ 
+    methods:{
+        adoptar(index){ 
+          Swal.fire({
+            title: '¿Está seguro?',
+            text: "Esta mascota será adoptada",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, estoy seguro'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.mascotas[index].estado = true
+              localStorage.setItem('mascotas', JSON.stringify(this.mascotas)) 
+              Swal.fire(
+                'Confirmado',
+                '¡Mascota adoptada!',
+                'success'
+              )
+            }
+          })
+        },
 
         logout(){ 
           Swal.fire({
