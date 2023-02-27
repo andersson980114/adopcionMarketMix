@@ -48,11 +48,11 @@
                     </thead>
                     <tbody>
                         <tr v-for="mascota of mascotas">
-                            <td><img class="rounded" :src="mascota.foto"   height="50"/></td>
+                            <td><img class="rounded" :src="mascota.foto"   height="50px"  width="50px"/></td>
                             <td class="text-dark">{{mascota.especie}}</td> 
                             <td class="text-dark">{{mascota.nombre}}</td>
                             <td class="text-dark">{{mascota.genero}}</td>
-                            <td class="text-dark">{{mascota.edad}}</td>
+                            <td class="text-dark">{{mascota.edad}} años</td>
                             <td class="text-dark">
                                 <a v-if="mascota.estado" class="btn btn-success text-white">Adoptado</a>
                                 <a v-else class="btn btn-danger  text-white">En Adopción</a>
